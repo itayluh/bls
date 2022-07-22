@@ -2,14 +2,17 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.google.gson.Gson;
+
 public class App {
     public static void main(String[] args) throws Exception {
         String targetURL = "https://api.bls.gov/publicAPI/v2/timeseries/data/";
         // String urlParameters = "{\"seriesid\":[\"LAUCN040010000000005\",
         // \"LAUCN040010000000006\"]}";
         String urlParameters = "{\"seriesid\":[\"LAUCN040010000000005\"]}";
-        // String urlParameters = "LAUCN040010000000005";
-        System.out.println(executePost(targetURL, urlParameters));
+        Gson gson = new Gson();
+        BLS bls = gson.fromJson(executePost(targetURL, urlParameters), BLS.class);
+        int x = 1;
     }
 
     private static String executePost(String targetURL, String urlParameters) {
