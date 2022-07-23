@@ -4,23 +4,27 @@ public class BLS {
     int responseTime;
     String[] message;
     Results Results;
+}
 
-    public class Results {
-        String seriesID;
-        data[] data;
+class Results {
+    series[] series;
+}
 
-        public class data {
-            String year;
-            String period;
-            String periodName;
-            String latest;
-            String value;
-            Footnotes[] footnotes;
+class series {
+    String seriesID;
+    data[] data;
+}
 
-            public class Footnotes {
-                String code;
-                String text;
-            }
-        }
-    }
+class data {
+    String year;
+    String period;
+    String periodName;
+    String latest;
+    String value;
+    Footnotes[] footnotes;
+}
+
+class Footnotes {
+    String code;
+    String text;
 }

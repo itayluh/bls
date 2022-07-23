@@ -10,8 +10,9 @@ public class App {
         // String urlParameters = "{\"seriesid\":[\"LAUCN040010000000005\",
         // \"LAUCN040010000000006\"]}";
         String urlParameters = "{\"seriesid\":[\"LAUCN040010000000005\"]}";
+        String post = executePost(targetURL, urlParameters);
         Gson gson = new Gson();
-        BLS bls = gson.fromJson(executePost(targetURL, urlParameters), BLS.class);
+        BLS bls = gson.fromJson(post, BLS.class);
         int x = 1;
     }
 
